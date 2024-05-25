@@ -28,4 +28,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
 
+    <TextView
+        android:id="@+id/tvVision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Our Vision"
+        android:textColor="@color/dark_blue"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetails"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvVisionDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/mission_details"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVision" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

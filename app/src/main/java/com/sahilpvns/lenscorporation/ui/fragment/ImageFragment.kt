@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sahilpvns.lenscorporation.R
+import com.sahilpvns.lenscorporation.adapter.ImageAdapter
+import com.sahilpvns.lenscorporation.adapter.TabAdapter
 import com.sahilpvns.lenscorporation.databinding.FragmentImageBinding
 
 
@@ -24,8 +28,18 @@ class ImageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentImageBinding.inflate(inflater, container, false)
 
-        binding.tvText.text = "Image fragment"
+        val imageList = listOf(
+            R.drawable.image1,
+            R.drawable.image2,
+            R.drawable.image3,
+            R.drawable.image4,
+            R.drawable.image5
+        )
 
+        binding.apply {
+            rvImage.layoutManager = GridLayoutManager(context,2)
+            rvImage.adapter = ImageAdapter(imageList)
+        }
 
         return binding.root
     }

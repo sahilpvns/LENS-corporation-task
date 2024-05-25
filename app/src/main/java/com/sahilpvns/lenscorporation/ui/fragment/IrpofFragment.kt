@@ -24,7 +24,6 @@ class IrpofFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentIrpofBinding.inflate(inflater, container, false)
 
-//        binding.tvText.text = "Irpof fragment"
 
 
         return binding.root
