@@ -22,7 +22,7 @@ import com.sahilpvns.lenscorporation.ui.fragment.RecentFragment
 import com.sahilpvns.lenscorporation.ui.fragment.VideoFragment
 
 
-class MainActivity : AppCompatActivity(),itemClickListener{
+class MainActivity : BaseActivity(),itemClickListener{
     private var binding: ActivityMainBinding? = null
     private val handler = Handler(Looper.getMainLooper())
     private var runnable: Runnable? = null
@@ -31,100 +31,30 @@ class MainActivity : AppCompatActivity(),itemClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        initView()
-        setUpObservere()
 
-
-        if (savedInstanceState == null) {
-            val fragment: Fragment = IrpofFragment()
-            supportFragmentManager.beginTransaction().replace(R.id.main_container, fragment).commitAllowingStateLoss()
-        }
-
-        val dataList = listOf(
-            "Home",
-            "Organization",
-            "DITS/Panel",
-            "IRMS",
-            "Events",
-            "Seniority",
-            "Circulars",
-            "News/Article",
-            "IRPOBF",
-            "Links",
-        )
-
-        val dataHeading = listOf(
-            "Who we are: IRPOF",
-            "Mission & Vision",
-            "Recent Events",
-            "Images",
-            "Videos"
-        )
-
-        val sliderImages = listOf(
-            R.drawable.homeimage1,
-            R.drawable.homeimage2,
-            R.drawable.homeimage3
-        )
-
+        openDefaultFragment()
         binding?.apply {
             rvItem.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false))
-            rvItem.adapter = TabAdapter(dataList)
+            rvItem.adapter = TabAdapter(dataList())
 
             mLayoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
-            rvSlider.layoutManager = mLayoutManager
-            rvSlider.adapter = ImageSliderAdapter(sliderImages)
-            startAutoScroll()
-            tvAutoRunning.setSelected(true)
 
+            rvSlider.layoutManager = mLayoutManager
+            rvSlider.adapter = ImageSliderAdapter(sliderImages())
 
             rvHeading.layoutManager = LinearLayoutManager(this@MainActivity)
-            rvHeading.adapter = HeadingAdapter(dataHeading,this@MainActivity)
+            rvHeading.adapter = HeadingAdapter(dataHeading(),this@MainActivity)
+
             btnContact.setOnClickListener {
                 Toast.makeText(this@MainActivity, "Contact us", Toast.LENGTH_SHORT).show()
             }
 
+            startAutoScroll()
+            tvAutoRunning.setSelected(true)
+
         }
 
 
-    }
-
-    private fun setUpObservere() {
-
-    }
-
-    private fun initView() {
-
-    }
-
-    private fun videoFragment() {
-        val fragment: Fragment = VideoFragment()
-        val fragmentManager: FragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
-    }
-
-    private fun imageFragment() {
-        val fragment: Fragment = ImageFragment()
-        val fragmentManager: FragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
-    }
-
-    private fun recentFragment() {
-        val fragment: Fragment = RecentFragment()
-        val fragmentManager: FragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
-    }
-
-    private fun missionFragment() {
-        val fragment: Fragment = MissionFragment()
-        val fragmentManager: FragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
-    }
-
-    private fun irpofFragment() {
-        val fragment: Fragment = IrpofFragment()
-        val fragmentManager: FragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
     }
 
 
