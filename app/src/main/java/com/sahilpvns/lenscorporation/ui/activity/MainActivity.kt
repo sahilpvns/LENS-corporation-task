@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sahilpvns.lenscorporation.R
+import com.sahilpvns.lenscorporation.adapter.HeadingAdapter
 import com.sahilpvns.lenscorporation.adapter.ImageSliderAdapter
 import com.sahilpvns.lenscorporation.adapter.TabAdapter
+import com.sahilpvns.lenscorporation.adapter.itemClickListener
 import com.sahilpvns.lenscorporation.databinding.ActivityMainBinding
 import com.sahilpvns.lenscorporation.ui.fragment.ImageFragment
 import com.sahilpvns.lenscorporation.ui.fragment.IrpofFragment
@@ -19,36 +21,41 @@ import com.sahilpvns.lenscorporation.ui.fragment.RecentFragment
 import com.sahilpvns.lenscorporation.ui.fragment.VideoFragment
 
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity(),itemClickListener{
     private var binding: ActivityMainBinding? = null
     private val handler = Handler(Looper.getMainLooper())
     private var runnable: Runnable? = null
     private lateinit var mLayoutManager: LinearLayoutManager
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
-        if (savedInstanceState == null) { // initial transaction should be wrapped like this
-            val fragment: Fragment = ImageFragment()
-            supportFragmentManager.beginTransaction().replace(R.id.main_container, fragment)
-                .commitAllowingStateLoss()
+        if (savedInstanceState == null) {
+            val fragment: Fragment = IrpofFragment()
+            supportFragmentManager.beginTransaction().replace(R.id.main_container, fragment).commitAllowingStateLoss()
         }
 
         val dataList = listOf(
-            "Links",
-            "IRPOBF",
-            "News/Article",
-            "Circulars",
-            "Seniority",
-            "Events",
-            "IRMS",
-            "DITS/Panel",
-            "Organization",
             "Home",
+            "Organization",
+            "DITS/Panel",
+            "IRMS",
+            "Events",
+            "Seniority",
+            "Circulars",
+            "News/Article",
+            "IRPOBF",
+            "Links",
+        )
+
+        val dataHeading = listOf(
+            "Who we are: IRPOF",
+            "Mission & Vision",
+            "Recent Events",
+            "Images",
+            "Videos"
         )
 
         val sliderImages = listOf(
@@ -58,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         binding?.apply {
-            rvItem.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, true))
+            rvItem.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false))
             rvItem.adapter = TabAdapter(dataList)
 
             mLayoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
@@ -67,22 +74,9 @@ class MainActivity : AppCompatActivity() {
             startAutoScroll()
             tvAutoRunning.setSelected(true)
 
-            tvIRPOF.setOnClickListener {
-                irpofFragment()
-            }
-            tvMission.setOnClickListener {
-                missionFragment()
-            }
-            tvEvent.setOnClickListener {
-                recentFragment()
-            }
-            tvImage.setOnClickListener {
-                imageFragment()
-            }
-            tvVideo.setOnClickListener {
-                videoFragment()
-            }
 
+            rvHeading.layoutManager = LinearLayoutManager(this@MainActivity)
+            rvHeading.adapter = HeadingAdapter(dataHeading,this@MainActivity)
 
         }
 
@@ -132,5 +126,25 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacks(runnable!!)
+    }
+
+    override fun onBtnClick(position: Int) {
+        when (position) {
+            0 -> {
+                irpofFragment()
+            }
+            1 -> {
+                missionFragment()
+            }
+            2 -> {
+                recentFragment()
+            }
+            3 -> {
+                imageFragment()
+            }
+            4 -> {
+                videoFragment()
+            }
+        }
     }
 }

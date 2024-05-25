@@ -17,7 +17,7 @@ class ImageAdapter(private var dataList: List<Int>) : RecyclerView.Adapter<Image
         val imageValue = dataList[position]
         holder.binding.ivPic.setImageResource(imageValue)
         holder.binding.ivPic.setOnClickListener {
-            Toast.makeText(it.context, "Click Image", Toast.LENGTH_SHORT).show()
+            Toast.makeText(it.context, "Click Image $position", Toast.LENGTH_SHORT).show()
         }
 
     }
