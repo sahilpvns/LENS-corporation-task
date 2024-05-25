@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_16sdp"
-            android:text="Recent Events"
+            android:text="@string/recent_events"
             android:textColor="@color/dark_blue"
             android:textSize="@dimen/_24sdp"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

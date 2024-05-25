@@ -3,6 +3,7 @@ package com.sahilpvns.lenscorporation.ui.activity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity(),itemClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        initView()
+        setUpObservere()
 
 
         if (savedInstanceState == null) {
@@ -77,9 +80,20 @@ class MainActivity : AppCompatActivity(),itemClickListener{
 
             rvHeading.layoutManager = LinearLayoutManager(this@MainActivity)
             rvHeading.adapter = HeadingAdapter(dataHeading,this@MainActivity)
+            btnContact.setOnClickListener {
+                Toast.makeText(this@MainActivity, "Contact us", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
+
+    }
+
+    private fun setUpObservere() {
+
+    }
+
+    private fun initView() {
 
     }
 

@@ -12,7 +12,7 @@
         android:text="@string/irpof_heading"
         android:textColor="@color/dark_blue"
         android:textSize="@dimen/_24sdp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +24,7 @@
         android:text="@string/irpof_details"
         android:textColor="@color/black"
         android:textSize="@dimen/_14sdp"
+        android:fontFamily="@font/poppins_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHeading" />
 

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sahilpvns.lenscorporation.R
 import com.sahilpvns.lenscorporation.databinding.ItemHeadingBinding
 
-class HeadingAdapter (private var dataList: List<String>, val mListener: itemClickListener) : RecyclerView.Adapter<HeadingAdapter.HeadingViewHolder>() {
+class HeadingAdapter (private var dataList: List<String>, private val mListener: itemClickListener) : RecyclerView.Adapter<HeadingAdapter.HeadingViewHolder>() {
     private var currentItem = -1
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadingViewHolder {
         val binding = ItemHeadingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -37,11 +37,7 @@ class HeadingAdapter (private var dataList: List<String>, val mListener: itemCli
                 tvHeading.text = item
                 viewSelect.isVisible = adapterPosition == currentItem
                 cvCard.setBackgroundColor(
-                    ContextCompat.getColor(
-                        this.root.context,
-                        if (adapterPosition == currentItem) R.color.light_alpha_blue else R.color.white
-                    )
-                )
+                    ContextCompat.getColor(this.root.context, if (adapterPosition == currentItem) R.color.light_alpha_blue else R.color.white))
             }
         }
     }

@@ -29,24 +29,30 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etSearchCity"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-            android:background="@drawable/search_shape"
-            android:hint="Search"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/edit_shape"
+            android:drawableStart="@drawable/ic_search"
+            android:gravity="center_vertical"
             android:inputType="text"
-            android:padding="@dimen/_10sdp"
+            android:hint="@string/search"
+            android:padding="@dimen/_7sdp"
+            android:textSize="@dimen/_10sdp"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="@+id/btnContact"
             app:layout_constraintEnd_toStartOf="@+id/btnContact"
             app:layout_constraintTop_toTopOf="@+id/btnContact" />
 
-        <Button
+            <com.google.android.material.textview.MaterialTextView
             android:id="@+id/btnContact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_16sdp"
-            android:text="@string/contact_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/contact_shape_"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/contact_us"
+                android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="@+id/ivTrain"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/ivTrain" />
@@ -75,37 +81,37 @@
 
         <TextView
             android:id="@+id/tvLatest"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_45sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_40sdp"
             android:background="@drawable/contact_shape"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
             android:text="@string/latest_headline"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvSlider" />
 
-        <TextView
-            android:id="@+id/tvAutoRunning"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_45sdp"
-            android:background="@drawable/heading_shape"
-            android:fontFamily="@font/poppins_light"
-            android:gravity="center"
-            android:text="@string/latest_headline_text"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_12sdp"
-            android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:padding="10dp"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            app:layout_constraintBottom_toBottomOf="@+id/tvLatest"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tvLatest"
-            app:layout_constraintTop_toBottomOf="@+id/rvSlider" />
+            <TextView
+                android:id="@+id/tvAutoRunning"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/heading_shape"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="10dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="@string/latest_headline_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLatest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLatest"
+                app:layout_constraintTop_toTopOf="@+id/tvLatest" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvHeading"
@@ -113,6 +119,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/tvAutoRunning"
                 tools:itemCount="4"
+                android:layout_marginHorizontal="@dimen/_8sdp"
                 app:layout_constraintBottom_toTopOf="@+id/main_container"
                 android:layout_marginVertical="@dimen/_10sdp"
                 tools:listitem="@layout/item_heading" />
@@ -122,6 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginHorizontal="@dimen/_8sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvHeading" />

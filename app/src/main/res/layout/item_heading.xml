@@ -34,7 +34,7 @@
                 android:id="@+id/tvHeading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recent Events"
+                android:text="@string/recent_events"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"

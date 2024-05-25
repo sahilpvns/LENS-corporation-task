@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_16sdp"
-            android:text="Image"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/image"
             android:textColor="@color/dark_blue"
             android:textSize="@dimen/_24sdp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,6 +34,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
+            android:fontFamily="@font/poppins_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tvImage"
             app:layout_constraintTop_toBottomOf="@+id/tvImage" />

@@ -26,7 +26,7 @@
                 android:text="@string/recent_details_heading"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,6 +38,7 @@
                 android:text="@string/published"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_light"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetails" />
 
@@ -49,7 +50,7 @@
                 android:text="@string/view_details"
                 android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_12sdp"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvPublished" />
 
