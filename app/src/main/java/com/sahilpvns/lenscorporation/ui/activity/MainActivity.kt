@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sahilpvns.lenscorporation.R
 import com.sahilpvns.lenscorporation.adapter.HeadingAdapter
@@ -15,11 +12,6 @@ import com.sahilpvns.lenscorporation.adapter.ImageSliderAdapter
 import com.sahilpvns.lenscorporation.adapter.TabAdapter
 import com.sahilpvns.lenscorporation.adapter.itemClickListener
 import com.sahilpvns.lenscorporation.databinding.ActivityMainBinding
-import com.sahilpvns.lenscorporation.ui.fragment.ImageFragment
-import com.sahilpvns.lenscorporation.ui.fragment.IrpofFragment
-import com.sahilpvns.lenscorporation.ui.fragment.MissionFragment
-import com.sahilpvns.lenscorporation.ui.fragment.RecentFragment
-import com.sahilpvns.lenscorporation.ui.fragment.VideoFragment
 
 
 class MainActivity : BaseActivity(),itemClickListener{

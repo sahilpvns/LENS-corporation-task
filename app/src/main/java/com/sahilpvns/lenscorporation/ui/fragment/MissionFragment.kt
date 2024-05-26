@@ -25,7 +25,6 @@ class MissionFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentMissionBinding.inflate(inflater, container, false)
 
-//        binding.tvText.text = "Mission Fragment"
 
 
         return binding.root
