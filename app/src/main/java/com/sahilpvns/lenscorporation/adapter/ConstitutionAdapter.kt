@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.sahilpvns.lenscorporation.databinding.ActivityMainBinding.bind
 import com.sahilpvns.lenscorporation.databinding.ItemConstitutionBinding
 import com.sahilpvns.lenscorporation.ui.activity.PDF
 
@@ -16,8 +17,16 @@ class ConstitutionAdapter() : RecyclerView.Adapter<ConstitutionAdapter.Constitut
     }
 
     override fun onBindViewHolder(holder: ConstitutionViewHolder, position: Int) {
-        holder.binding.tvShowPDF.setOnClickListener {
-            Toast.makeText(it.context, "Showing PDF", Toast.LENGTH_SHORT).show()
+        holder.binding.apply {
+            tvShowPDF.setOnClickListener {
+                it.context.startActivity(Intent(it.context, PDF::class.java))
+            }
+            tvViewDetails.setOnClickListener {
+                it.context.startActivity(Intent(it.context, PDF::class.java))
+            }
+            ivDownload.setOnClickListener {
+                it.context.startActivity(Intent(it.context, PDF::class.java))
+            }
         }
 
     }

@@ -1,6 +1,9 @@
 package com.sahilpvns.lenscorporation.ui.activity
 
 import android.os.Bundle
+import android.view.View
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,7 +20,15 @@ class PDF : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_pdf)
 
-//        binding?.pdfView?.fromAsset("lens.pdf")
+        binding?.apply {
+            webView.loadUrl(getString(R.string.pdf_url))
+            webView.settings.javaScriptEnabled = true
+            webView.webViewClient = object : WebViewClient() {
+                override fun onPageFinished(view: WebView, url: String) {
+                    pbLoader.visibility = View.GONE
+                }
+            }
+        }
 
 
     }

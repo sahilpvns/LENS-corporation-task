@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">LENS Corporation</string>
+    <string name="pdf_url">https://drive.google.com/file/d/1NrVfbVQ4psiaD6D8sbRmj7JKT23Y1JxY/view?usp=drive_link</string>
     <string name="contact_us">Contact Us</string>
     <string name="latest_headline">Latest\n Headlines</string>
     <string name="latest_headline_text">Lorem Ipsum The national single window system has access to over 100 central level approvals and state single window systems of 14 states with one user Id and password</string>
