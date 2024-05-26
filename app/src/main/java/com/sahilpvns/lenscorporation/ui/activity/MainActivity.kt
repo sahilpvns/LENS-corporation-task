@@ -24,31 +24,35 @@ class MainActivity : BaseActivity(),itemClickListener{
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        contactAction()
         openDefaultFragment()
-        binding?.apply {
-            rvItem.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false))
-            rvItem.adapter = TabAdapter(dataList())
-
-            mLayoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
-
-            rvSlider.layoutManager = mLayoutManager
-            rvSlider.adapter = ImageSliderAdapter(sliderImages())
-
-            rvHeading.layoutManager = LinearLayoutManager(this@MainActivity)
-            rvHeading.adapter = HeadingAdapter(dataHeading(),this@MainActivity)
-
-            btnContact.setOnClickListener {
-                Toast.makeText(this@MainActivity, "Contact us", Toast.LENGTH_SHORT).show()
-            }
-
-            startAutoScroll()
-            tvAutoRunning.setSelected(true)
-
-        }
-
-
+        setLayoutTab()
+        setLayoutImageSlider()
+        setLayoutHeading()
+        marqueeRepeatLimit()
     }
 
+    private fun marqueeRepeatLimit() {
+        binding?.tvAutoRunning?.setSelected(true)
+    }
+
+    private fun contactAction() {
+        binding?.btnContact?.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Contact us", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setLayoutHeading() {
+        binding?.rvHeading?.layoutManager = LinearLayoutManager(this@MainActivity)
+        binding?.rvHeading?.adapter = HeadingAdapter(dataHeading(),this@MainActivity)
+    }
+
+    private fun setLayoutImageSlider() {
+        mLayoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
+        binding?.rvSlider?.layoutManager = mLayoutManager
+        binding?.rvSlider?.adapter = ImageSliderAdapter(sliderImages())
+        startAutoScroll()
+    }
 
     private fun startAutoScroll() {
         runnable = Runnable {
@@ -57,6 +61,11 @@ class MainActivity : BaseActivity(),itemClickListener{
             handler.postDelayed(runnable!!, 2000) // scrolls every 2 seconds
         }
         handler.postDelayed(runnable!!, 2000)
+    }
+
+    private fun setLayoutTab() {
+        binding?.rvItem?.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false))
+        binding?.rvItem?.adapter = TabAdapter(dataList())
     }
 
     override fun onDestroy() {
