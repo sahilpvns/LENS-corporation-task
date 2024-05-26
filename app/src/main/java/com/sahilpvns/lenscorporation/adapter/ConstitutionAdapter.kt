@@ -3,11 +3,9 @@ package com.sahilpvns.lenscorporation.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.sahilpvns.lenscorporation.databinding.ActivityMainBinding.bind
 import com.sahilpvns.lenscorporation.databinding.ItemConstitutionBinding
-import com.sahilpvns.lenscorporation.ui.activity.PDF
+import com.sahilpvns.lenscorporation.ui.activity.PdfActivity
 
 class ConstitutionAdapter() : RecyclerView.Adapter<ConstitutionAdapter.ConstitutionViewHolder>() {
 
@@ -19,13 +17,13 @@ class ConstitutionAdapter() : RecyclerView.Adapter<ConstitutionAdapter.Constitut
     override fun onBindViewHolder(holder: ConstitutionViewHolder, position: Int) {
         holder.binding.apply {
             tvShowPDF.setOnClickListener {
-                it.context.startActivity(Intent(it.context, PDF::class.java))
+                it.context.startActivity(Intent(it.context, PdfActivity::class.java))
             }
             tvViewDetails.setOnClickListener {
-                it.context.startActivity(Intent(it.context, PDF::class.java))
+                it.context.startActivity(Intent(it.context, PdfActivity::class.java))
             }
             ivDownload.setOnClickListener {
-                it.context.startActivity(Intent(it.context, PDF::class.java))
+                it.context.startActivity(Intent(it.context, PdfActivity::class.java))
             }
         }
 

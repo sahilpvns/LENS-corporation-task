@@ -4,16 +4,11 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.sahilpvns.lenscorporation.R
-import com.sahilpvns.lenscorporation.databinding.ActivityMainBinding
 import com.sahilpvns.lenscorporation.databinding.ActivityPdfBinding
 
-class PDF : BaseActivity() {
+class PdfActivity : BaseActivity() {
 
     private var binding: ActivityPdfBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -15,7 +15,7 @@
         android:theme="@style/Theme.LENSCorporation"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.PDF"
+            android:name=".ui.activity.PdfActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.MainActivity"
