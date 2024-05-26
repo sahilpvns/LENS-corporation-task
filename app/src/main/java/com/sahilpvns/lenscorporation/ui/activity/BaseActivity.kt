@@ -8,7 +8,7 @@ import com.sahilpvns.lenscorporation.ui.fragment.ImageFragment
 import com.sahilpvns.lenscorporation.ui.fragment.IrpofFragment
 import com.sahilpvns.lenscorporation.ui.fragment.MissionFragment
 import com.sahilpvns.lenscorporation.ui.fragment.RecentFragment
-import com.sahilpvns.lenscorporation.ui.fragment.VideoFragment
+import com.sahilpvns.lenscorporation.ui.fragment.ConstitutionFragment
 
 open class BaseActivity() : AppCompatActivity() {
 
@@ -26,7 +26,7 @@ open class BaseActivity() : AppCompatActivity() {
     )
 
     fun dataHeading() =
-        listOf("Who we are: IRPOF", "Mission & Vision", "Recent Events", "Images", "Videos")
+        listOf("Who we are: IRPOF", "Mission & Vision", "Recent Events", "Images", "Constitution")
 
 
     fun sliderImages() = listOf(R.drawable.homeimage1, R.drawable.homeimage2, R.drawable.homeimage3)
@@ -37,7 +37,7 @@ open class BaseActivity() : AppCompatActivity() {
     }
 
     fun videoFragment() {
-        val fragment: Fragment = VideoFragment()
+        val fragment: Fragment = ConstitutionFragment()
         val fragmentManager: FragmentManager = supportFragmentManager
         fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
     }

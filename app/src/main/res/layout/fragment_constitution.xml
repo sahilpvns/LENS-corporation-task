@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -14,42 +13,28 @@
             android:background="@android:color/white">
 
             <TextView
-                android:id="@+id/tvVideo"
+                android:id="@+id/tvConstitution"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="@string/video"
+                android:text="@string/constitution"
                 android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_24sdp"
                 android:fontFamily="@font/poppins_semibold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvDetails"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:textColor="@color/black"
-                android:text="@string/recent_details_heading"
-                android:textSize="@dimen/_12sdp"
-                android:fontFamily="@font/poppins_medium"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/tvVideo"
-                app:layout_constraintTop_toBottomOf="@+id/tvVideo" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvVideo"
+                android:id="@+id/rvConstitution"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/_4sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@+id/tvDetails"
+                app:layout_constraintTop_toBottomOf="@+id/tvConstitution"
                 tools:itemCount="5"
-                tools:listitem="@layout/item_video" />
+                tools:listitem="@layout/item_constitution" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

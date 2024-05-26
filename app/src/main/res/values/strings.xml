@@ -16,6 +16,12 @@
     <string name="image">Image</string>
     <string name="our_vision">Our Vision</string>
     <string name="recent_events">Recent Events</string>
+    <string name="constitution">Constitution</string>
+    <string name="download_npdf">Download \nPDF</string>
+    <string name="show_preview">Show Preview</string>
+    <string name="constitution_irpof">Constitution irpof</string>
+    <string name="type_pdf"><b>Type: </b>pdf</string>
+    <string name="scanned_copy">Scanned: Copy</string>
 
 
 </resources>
