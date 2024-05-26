@@ -52,5 +52,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("com.intuit.sdp:sdp-android:1.1.0")
+//    implementation("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
 
 }
