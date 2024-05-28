@@ -1,4 +1,6 @@
-package com.sahilpvns.lenscorporation.network
+package com.sahilpvns.lenscorporation.viewmodel
+
+import com.sahilpvns.lenscorporation.network.DashboardRepo
 
 class DashBoardViewModel {
     private val dashboardRepo by lazy { DashboardRepo() }

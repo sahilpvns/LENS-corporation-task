@@ -12,7 +12,7 @@ import com.sahilpvns.lenscorporation.ui.fragment.ConstitutionFragment
 
 open class BaseActivity() : AppCompatActivity() {
 
-    fun dataList() = listOf(
+    fun tabList() = listOf(
         "Home",
         "Organization",
         "DITS/Panel",
@@ -36,7 +36,7 @@ open class BaseActivity() : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.main_container, fragment).commitAllowingStateLoss()
     }
 
-    fun videoFragment() {
+    fun constitutionFragment() {
         val fragment: Fragment = ConstitutionFragment()
         val fragmentManager: FragmentManager = supportFragmentManager
         fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()

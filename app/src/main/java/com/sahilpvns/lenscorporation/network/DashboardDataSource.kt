@@ -2,25 +2,14 @@ package com.sahilpvns.lenscorporation.network
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.sahilpvns.lenscorporation.R
 
 class DashboardDataSource {
 
-    private val _sliderItems = MutableLiveData<List<String>>()
-    fun observerSliderItems(): LiveData<List<String>> = _sliderItems
+    private val _sliderItems = MutableLiveData<List<Int>>()
+    fun observerSliderItems(): LiveData<List<Int>> = _sliderItems
     fun getSliderItems() {
-        _sliderItems.postValue(
-            listOf(
-                "Home",
-                "Organization",
-                "DITS/Panel",
-                "IRMS",
-                "Events",
-                "Seniority",
-                "Circulars",
-                "News/Article",
-                "IRPOBF",
-                "Links",
-            )
-        )
+        _sliderItems.postValue(listOf(R.drawable.homeimage1, R.drawable.homeimage2, R.drawable.homeimage3))
     }
+
 }

@@ -54,7 +54,7 @@ class MainActivity : BaseActivity(),itemClickListener{
         startAutoScroll()
     }
 
-    private fun startAutoScroll() {
+    private fun startAutoScroll() {listOf(R.drawable.homeimage1, R.drawable.homeimage2, R.drawable.homeimage3)
         runnable = Runnable {
             val position = mLayoutManager.findFirstVisibleItemPosition()
             binding?.rvSlider?.smoothScrollToPosition(position + 1)
@@ -65,7 +65,7 @@ class MainActivity : BaseActivity(),itemClickListener{
 
     private fun setLayoutTab() {
         binding?.rvItem?.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false))
-        binding?.rvItem?.adapter = TabAdapter(dataList())
+        binding?.rvItem?.adapter = TabAdapter(tabList())
     }
 
     override fun onDestroy() {
@@ -88,7 +88,7 @@ class MainActivity : BaseActivity(),itemClickListener{
                 imageFragment()
             }
             4 -> {
-                videoFragment()
+                constitutionFragment()
             }
         }
     }
