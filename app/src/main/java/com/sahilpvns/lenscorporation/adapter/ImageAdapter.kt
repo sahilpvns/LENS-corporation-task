@@ -15,15 +15,18 @@ class ImageAdapter(private var dataList: List<Int>) : RecyclerView.Adapter<Image
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val imageValue = dataList[position]
-        holder.binding.ivPic.setImageResource(imageValue)
-        holder.binding.ivPic.setOnClickListener {
-            Toast.makeText(it.context, "Click Image $position", Toast.LENGTH_SHORT).show()
-        }
-
+        holder.bind(imageValue)
     }
 
     override fun getItemCount(): Int = dataList.size
 
-    class ImageViewHolder(var binding: ItemImageBinding) : RecyclerView.ViewHolder(binding.root) {}
+    class ImageViewHolder(var binding: ItemImageBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(imageValue: Int) {
+            binding.ivPic.setImageResource(imageValue)
+            binding.ivPic.setOnClickListener {
+                Toast.makeText(it.context, "Click Image $layoutPosition", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
 }

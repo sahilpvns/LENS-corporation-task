@@ -15,22 +15,25 @@ class ConstitutionAdapter() : RecyclerView.Adapter<ConstitutionAdapter.Constitut
     }
 
     override fun onBindViewHolder(holder: ConstitutionViewHolder, position: Int) {
-        holder.binding.apply {
-            tvShowPDF.setOnClickListener {
-                it.context.startActivity(Intent(it.context, PdfActivity::class.java))
-            }
-            tvViewDetails.setOnClickListener {
-                it.context.startActivity(Intent(it.context, PdfActivity::class.java))
-            }
-            ivDownload.setOnClickListener {
-                it.context.startActivity(Intent(it.context, PdfActivity::class.java))
-            }
-        }
-
+        holder.bind(position)
     }
 
     override fun getItemCount(): Int = 4
 
-    class ConstitutionViewHolder(var binding: ItemConstitutionBinding) : RecyclerView.ViewHolder(binding.root) {}
+    class ConstitutionViewHolder(var binding: ItemConstitutionBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(position: Int) {
+            binding.apply {
+                tvShowPDF.setOnClickListener {
+                    it.context.startActivity(Intent(it.context, PdfActivity::class.java))
+                }
+                tvViewDetails.setOnClickListener {
+                    it.context.startActivity(Intent(it.context, PdfActivity::class.java))
+                }
+                ivDownload.setOnClickListener {
+                    it.context.startActivity(Intent(it.context, PdfActivity::class.java))
+                }
+            }
+        }
+    }
 
 }

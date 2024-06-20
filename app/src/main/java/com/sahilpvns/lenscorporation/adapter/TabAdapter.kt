@@ -15,14 +15,19 @@ class TabAdapter(private var dataList: List<String>) : RecyclerView.Adapter<TabA
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val textValue = dataList[position]
-        holder.binding.btnTab.text = textValue
-        holder.binding.btnTab.setOnClickListener {
-            Toast.makeText(it.context, textValue, Toast.LENGTH_SHORT).show()
-        }
+        holder.bind(textValue)
     }
 
     override fun getItemCount(): Int = dataList.size
 
-    class PostViewHolder(var binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {}
+    class PostViewHolder(var binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(textValue: String) {
+            binding.btnTab.text = textValue
+            binding.btnTab.setOnClickListener {
+                Toast.makeText(it.context, textValue, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
 
 }
