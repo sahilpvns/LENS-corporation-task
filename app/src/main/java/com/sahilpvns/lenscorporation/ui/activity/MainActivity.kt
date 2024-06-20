@@ -64,7 +64,7 @@ class MainActivity : BaseActivity(),itemClickListener{
     }
 
     private fun setLayoutTab() {
-        binding?.rvItem?.setLayoutManager(LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false))
+        binding?.rvItem?.layoutManager = LinearLayoutManager (this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
         binding?.rvItem?.adapter = TabAdapter(tabList())
     }
 
