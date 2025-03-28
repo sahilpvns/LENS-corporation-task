@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sahilpvns.lenscorporation.R
 import com.sahilpvns.lenscorporation.databinding.ItemHeadingBinding
 
-class HeadingAdapter (private var dataList: List<String>, private val mListener: itemClickListener) : RecyclerView.Adapter<HeadingAdapter.HeadingViewHolder>() {
+class HeadingAdapter (private var dataList: List<String>, private val mListener: ItemClickListener) : RecyclerView.Adapter<HeadingAdapter.HeadingViewHolder>() {
     private var currentItem = -1
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadingViewHolder {
         val binding = ItemHeadingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -44,6 +44,6 @@ class HeadingAdapter (private var dataList: List<String>, private val mListener:
 
 }
 
-interface itemClickListener{
+interface ItemClickListener{
     fun onBtnClick(position: Int)
 }

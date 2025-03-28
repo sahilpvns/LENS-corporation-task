@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sahilpvns.lenscorporation.R
 import com.sahilpvns.lenscorporation.adapter.HeadingAdapter
 import com.sahilpvns.lenscorporation.adapter.ImageSliderAdapter
+import com.sahilpvns.lenscorporation.adapter.ItemClickListener
 import com.sahilpvns.lenscorporation.adapter.TabAdapter
-import com.sahilpvns.lenscorporation.adapter.itemClickListener
 import com.sahilpvns.lenscorporation.databinding.ActivityMainBinding
 
 
-class MainActivity : BaseActivity(),itemClickListener{
+class MainActivity : BaseActivity(), ItemClickListener {
     private var binding: ActivityMainBinding? = null
     private val handler = Handler(Looper.getMainLooper())
     private var runnable: Runnable? = null
