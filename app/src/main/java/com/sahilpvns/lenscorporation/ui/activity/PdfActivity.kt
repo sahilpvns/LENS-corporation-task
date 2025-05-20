@@ -10,12 +10,13 @@ import com.sahilpvns.lenscorporation.databinding.ActivityPdfBinding
 
 class PdfActivity : BaseActivity() {
 
-    private var binding: ActivityPdfBinding? = null
+    private lateinit var binding : ActivityPdfBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_pdf)
+        binding = ActivityPdfBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        binding?.apply {
+        binding.apply {
             webView.loadUrl(getString(R.string.pdf_url))
             webView.settings.javaScriptEnabled = true
             webView.webViewClient = object : WebViewClient() {
